@@ -21,32 +21,6 @@ let sessions = {};
 let nextId = { user: 1, post: 1, comment: 1, message: 1 };
 
 // ─────────────────────────────
-// Seed Data
-// ─────────────────────────────
-(function seed() {
-  const demo = [
-    { name: "Alex Rivera", username: "alex_r", password: "1234", bio: "Living every moment ✨", color: "#FF6B6B", avatar: "AR" },
-    { name: "Jamie West", username: "jamie_w", password: "1234", bio: "Photography & coffee ☕", color: "#4ECDC4", avatar: "JW" },
-    { name: "Sam Kira", username: "sam_kira", password: "1234", bio: "Code, music, repeat 🎵", color: "#A78BFA", avatar: "SK" },
-  ];
-
-  demo.forEach(u =>
-    users.push({ ...u, id: nextId.user++, createdAt: new Date().toISOString() })
-  );
-
-  posts = [
-    {
-      id: nextId.post++,
-      userId: 2,
-      content: "Just hit the mountains 🏔️",
-      timestamp: new Date().toISOString(),
-      likes: [],
-      comments: []
-    }
-  ];
-})();
-
-// ─────────────────────────────
 // Helpers
 // ─────────────────────────────
 const tokenGen = () => Math.random().toString(36).substring(2);
